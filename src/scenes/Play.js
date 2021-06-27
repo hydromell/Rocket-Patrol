@@ -7,10 +7,15 @@ class Play extends Phaser.Scene {
 
     }
     preload() {
+        this.load.image('rocket', './assets/rocket.png');
+        this.load.image('spaceship', './assets/spaceship.png');
+        this.load.image('starfield', './assets/starfield.png');
 
     }
     create() {
         this.add.text(20, 20, "Rocket Patrol Play");
+
+        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0,0);
 
         //green UI background
         this.add.rectangle(0, borderUISize + borderPadding,
@@ -23,6 +28,7 @@ class Play extends Phaser.Scene {
 
     }
     update() {
+        this.starfield.tilePositionX -= 4;
 
     }
 }
